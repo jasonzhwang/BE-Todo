@@ -3,7 +3,7 @@ import 'normalize.css';
 import './reset.css'
 import { createRoot } from 'react-dom/client';
 // import App from './App';
-import App2 from './withgrid/App2';
+import App from './withgrid/AppGrid';
 import './index.css'
 
 
@@ -11,4 +11,4 @@ import './index.css'
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 // root.render(<App />);
-root.render(<App2 />);
+root.render(<App />);
