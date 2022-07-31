@@ -4,18 +4,18 @@ import './Header.scss';
 import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 
-const AddButton = styled.div`
-    font-size: 2rem;
-    background:transparent;
-    border: transparent;
-    color: white;
-`
+// const AddButton = styled.div`
+//     font-size: 2rem;
+//     background:transparent;
+//     border: transparent;
+//     color: white;
+// `
 
-const PizzaButton = styled.div`
-    background:transparent;
-    border: transparent;
-    color: white;
-`
+// const PizzaButton = styled.div`
+//     background:transparent;
+//     border: transparent;
+//     color: white;
+// `
 
 // const PizzaSvg= styled.div`
 //     // margin: 10px;
@@ -23,9 +23,9 @@ const PizzaButton = styled.div`
 //     height: 20px;
 // `
 
-const Left8space = styled.div` 
-padding-left: 8px;
-`
+// const Left8space = styled.div` 
+// padding-left: 8px;
+// `
 const Header = () => {
 //   const [shouldShowMain, setShouldShowMain] = useState(false);
 //   const [showQuickAddTask, setShowQuickAddTask] = useState(false);

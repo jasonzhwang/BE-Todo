@@ -17,8 +17,8 @@ const App=()=>(
 
     {/* <Normalize /> */}
     <Header />
-    {/* <Content />
-    <Footer/> */}
+    <Content />
+    {/* <Footer/> */}
   </div>
 )
 

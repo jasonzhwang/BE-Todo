@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useContext } from 'react'
+import '../withgrid/Task.scss'
 import SelectedTaskContext from '../context/SelectedTaskContext'
 const Office=['Office1','Office2','Office3']
 const Daily =['Daily1','Daily2','Daily3']
@@ -8,12 +9,12 @@ const Words =['Words1','Words2','Words3']
 const Music=['Music1','Music2','Music3']
 // const selectedTask = "Test2"
 
-const H1 = styled.h1`
-    position:absolute;
-    left: 40%;
-    top: 10%;
-    font-size:50px;
-`
+// const H1 = styled.h1`
+//     position:absolute;
+//     left: 40%;
+//     top: 10%;
+//     font-size:50px;
+// `
 
 const makeList = (name)=>{
     name = [];
@@ -29,10 +30,10 @@ const Tasks = () => {
     console.log(test)
     return(
         <div>
-            <H1>
+            <h1 className="task-selected">
                 {/* <span>Test</span> */}
                 {selectedTask}
-            </H1>
+            </h1>
             <ul>
                 {
                 test.map((task,index) =>
