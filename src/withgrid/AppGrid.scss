@@ -40,3 +40,19 @@
 //     right: -300px;
 // }
 
+.container-page{
+    .aside-left{
+        grid-area:aside-left;
+    }
+    .aside-right{
+        grid-area:aside-right;
+    }
+    display: grid;
+    grid-template-areas: 
+          'header header header'
+          'aside-left main aside-right'
+          'footer footer footer';
+    min-height: 100vh;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 50px 1fr 50px;
+}

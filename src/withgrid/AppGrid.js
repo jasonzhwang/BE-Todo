@@ -5,7 +5,7 @@ import Content from './gridlayout/Content'
 import Footer from './gridlayout/Footer'
 
 const App=()=>(
-  <div>
+  <div className="container-page">
     {/* <div class="header">头部</div>
     <div class="main clearfix">
       <div class="center">中间自适应</div> 
@@ -17,8 +17,10 @@ const App=()=>(
 
     {/* <Normalize /> */}
     <Header />
+    <aside className="aside-left"></aside>
     <Content />
-    {/* <Footer/> */}
+    <aside className="aside-right"></aside>
+    <Footer/>
   </div>
 )
 

@@ -1,6 +1,7 @@
+import '../gridlayout/Footer.scss'
 const Footer = () =>{
     return(
-        <div>
+        <div className='footer'>
             Something in the end
         </div>
     )
