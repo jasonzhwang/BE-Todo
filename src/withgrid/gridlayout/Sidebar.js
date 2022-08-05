@@ -77,7 +77,7 @@ import Projects from '../Projects';
 const Sidebar = () => {
 //   const { setSelectedProject } = useSelectedProjectValue();
 //   const [active, setActive] = useState('inbox');
-  const [showProjects, setShowProjects] = useState(true);
+  const [showProjects, setShowProjects] = useState();
 
   return (
     <div className="sidebar-container">
@@ -118,7 +118,7 @@ const Sidebar = () => {
         </span>
         <h2>Projects</h2>
     </div>
-    <div className="VisibileProjects">{showProjects && <Projects />}</div>
+    <>{showProjects && <Projects />}</>
     {/* <VisibleProjects>{showProjects && <Projects selectedTask={selectedTask} getSelected={getSelected} setSelectedTask={setSelectedTask}/>}</VisibleProjects> */}
     </div>
   );

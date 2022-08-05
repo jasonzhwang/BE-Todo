@@ -29,19 +29,19 @@ const Tasks = () => {
     const test = makeList({selectedTask})
     console.log(test)
     return(
-        <div>
+        <>
             <h1 className="task-selected">
                 {/* <span>Test</span> */}
                 {selectedTask}
             </h1>
-            <ul>
+            {/* <ul>
                 {
                 test.map((task,index) =>
                      <li key={index}>{task}</li>
                     )
                 }
-            </ul>
-        </div>
+            </ul> */}
+        </>
     )
 }
 export default Tasks;

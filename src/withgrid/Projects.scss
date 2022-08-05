@@ -1,4 +1,5 @@
 .projects{
+    padding-top:1rem;
     .Project{
         display:flex;
         align-items: center;
@@ -7,21 +8,29 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        cursor: pointer;
         line-height: 1.50;
         font-size: 15px;
         padding-left: 0;
         padding-right: 0;
 
-        .dot{
-            margin-right: 10px;
-            font-size: 30px;
-        }
-        .projectName{
-            padding-left: 1rem;
-            margin: 0;
-            color: #333;
-            font-size: 15px;
+        div{
+            padding-left:10px;
+            display:flex;
+            align-items: center;
+            gap:1.5rem;
+            width: 100%;
+            .dot{
+                font-size: 30px;
+            }
+            .projectName{
+                margin: 0;
+                color: #333;
+                font-size: 15px;
+            }
+            &.active, &:hover {
+                font-weight: bold;
+                background-color: white;
+            }
         }
     }
     :nth-child(1) .dot{

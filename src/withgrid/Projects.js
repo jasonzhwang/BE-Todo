@@ -78,8 +78,10 @@ let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
         {/* <Styledli key={index} onClick={()=>{selectedTask=project; getSelected(project);setSelectedTask(selectedTask);console.log(selectedTask)}}> */}
 
             {/* <IndividualProject name={project}/> */}
+            <div>
             <span className="dot">•</span>
             <h2 className="projectName">{project}</h2>
+            </div>
             {/* <span
                 tabIndex={0}
                 role="button"

@@ -18,7 +18,7 @@ const App=()=>(
     {/* <Normalize /> */}
     <Header />
     <aside className="aside-left"></aside>
-    <Content />
+    <Content className="main"/>
     <aside className="aside-right"></aside>
     <Footer/>
   </div>

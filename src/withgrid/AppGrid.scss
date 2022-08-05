@@ -43,9 +43,11 @@
 .container-page{
     .aside-left{
         grid-area:aside-left;
+        background-color:  #fafafa;
     }
     .aside-right{
         grid-area:aside-right;
+        background-color: #fafafa;
     }
     display: grid;
     grid-template-areas: 
@@ -56,3 +58,22 @@
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: 50px 1fr 50px;
 }
+
+
+@media screen and (max-width: 600px) {
+    .container-page{
+      grid-template-areas: 
+        'header' 
+        'aside-left'
+        'main'
+        'aside-right'
+        'footer';
+      grid-template-columns: 100%;
+      grid-template-rows: 50px 50px minmax(300px, auto) 50px 80px;
+    }
+    .aside-left,.aside-right,.main{
+      display:flex;
+      align-items:center;
+      justify-content: center;
+    }
+  }
