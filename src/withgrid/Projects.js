@@ -3,9 +3,7 @@ import React, { useState,useContext } from 'react';
 import SelectedTaskContext from '../context/SelectedTaskContext'
 import '../withgrid/Projects.scss'
 
-
-
-const projects = ['THE OFFICE','DAILY','FUTURE','WORDS','MUSIC'];
+const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUSIC'];
 
 // const Styleddot = styled.span`
 //     margin-right: 10px;

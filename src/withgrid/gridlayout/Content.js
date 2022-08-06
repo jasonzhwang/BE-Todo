@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import Sidebar from './Sidebar';
-import Tasks from '../Task';
+import Tasks from '../gridlayout/Task';
 import styled from 'styled-components'
 import {SelectedTaskProvider} from '../../context/SelectedTaskContext';
 import '../gridlayout/Content.scss'
@@ -16,13 +16,13 @@ import '../gridlayout/Content.scss'
 // `
 
 const Content = () =>  {
-    const [selectedTask,setSelectedTask] = useState("OFFICE");
+    const [selectedTask,setSelectedTask] = useState("👏THE OFFICE");
     // const getSelected = (e) =>{
     //   setSelectedTask(e);
     // }
 
     return(
-    <section className="content-container">
+    <section className="main">
       {/* <Sidebar /> */}
       {/* <Sidebar selectedTask={selectedTask} setSelectedTask={setSelectedTask} getSelected={getSelected}/>
       <Tasks selectedTask={selectedTask} setSelectedTask={setSelectedTask}/> */}

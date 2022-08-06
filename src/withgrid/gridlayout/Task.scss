@@ -1,0 +1,29 @@
+.tasks-content{
+    display:flex;
+    flex-direction: column;
+    width: 656px;
+    // padding-top:74px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 80px;
+    padding-bottom: 84px;
+    h1{  
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0 30px 20px 0;
+        }
+    ul{
+        li{
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                line-height: 18px;
+                color: #333;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 14px;
+                list-style-type: none;
+                border-bottom: 1px solid #f0f0f0;
+        }
+    }
+    }

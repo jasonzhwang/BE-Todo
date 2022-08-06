@@ -77,7 +77,7 @@ import Projects from '../Projects';
 const Sidebar = () => {
 //   const { setSelectedProject } = useSelectedProjectValue();
 //   const [active, setActive] = useState('inbox');
-  const [showProjects, setShowProjects] = useState();
+  const [showProjects, setShowProjects] = useState(true);
 
   return (
     <div className="sidebar-container">

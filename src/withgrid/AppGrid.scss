@@ -43,11 +43,15 @@
 .container-page{
     .aside-left{
         grid-area:aside-left;
-        background-color:  #fafafa;
+        background-color: #fafafa;
     }
     .aside-right{
         grid-area:aside-right;
         background-color: #fafafa;
+    }
+    .main{
+      grid-area:main;
+      background-color: white;
     }
     display: grid;
     grid-template-areas: 
