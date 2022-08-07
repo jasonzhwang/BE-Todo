@@ -1,5 +1,6 @@
 import React, { useState,useContext } from 'react';
 // import styled from 'styled-components'
+import AddProject from './gridlayout/AddProject'
 import SelectedTaskContext from '../context/SelectedTaskContext'
 import '../withgrid/Projects.scss'
 
@@ -69,6 +70,7 @@ const Projects = () => {
 let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
 
   return (
+    <>
     <ul className="projects">
         {
         projects.map((project,index) => 
@@ -90,6 +92,8 @@ let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
         )
         }
     </ul>
+    <AddProject />
+    </>
   );
 };
 

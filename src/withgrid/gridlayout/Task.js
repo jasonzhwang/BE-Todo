@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import { useContext } from 'react'
-import '../../withgrid/gridlayout/Task.scss'
 import Checkbox from './Checkbox'
+import AddTask from './AddTask'
+import './Task.scss'
 import SelectedTaskContext from '../../context/SelectedTaskContext'
 
 const task_dt=[
@@ -54,6 +55,7 @@ const Tasks = () => {
                     )
                 }
             </ul>
+            <AddTask />
         </div>
     )
 }
