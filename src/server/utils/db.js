@@ -1,8 +1,12 @@
+// require('dotenv').config();
+PORT=8000
+CONNECTION_STRING = "mongodb+srv://Jason:Qq112345@cluster0.ssdbt.mongodb.net/?retryWrites=true&w=majority"
 const mongoose = require('mongoose');
 
 // const connectToDB = () => {}
 function connectToDB() {
-  const connectionString = process.env.CONNECTION_STRING;
+  // const connectionString = process.env.CONNECTION_STRING;
+  const connectionString = CONNECTION_STRING;
   if (!connectionString) {
     console.error('connection string not defined');
     // 正常退出
