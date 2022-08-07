@@ -1,8 +1,8 @@
 import React from 'react'
 import '../withgrid/AppGrid.scss';
-import Header from './gridlayout/Header'
-import Content from './gridlayout/Content'
-import Footer from './gridlayout/Footer'
+import Header from './components/Header/index'
+import Content from './components/Content/index'
+import Footer from './components/Footer/index'
 
 const App=()=>(
   <div className="container-page">
@@ -19,8 +19,8 @@ const App=()=>(
     <Header />
     <aside className="aside-left"></aside>
     <Content className="main"/>
-    <aside className="aside-right"></aside>
-    <Footer/>
+    {/* <aside className="aside-right"></aside>
+    <Footer/> */}
   </div>
 )
 

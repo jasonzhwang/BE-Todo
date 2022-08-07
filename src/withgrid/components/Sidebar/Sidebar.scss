@@ -1,0 +1,72 @@
+.sidebar-container{
+    width: 266px;
+    height: calc(100vh);
+    padding-top: 74px;
+    // position: fixed;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border-right: 1px solid #f1f1f1;
+    background-color: #fafafa;
+
+    .sidebar-list{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction:column;
+        li{
+            list-style-type: none;
+            cursor: pointer;
+            // width: 30px;
+            // height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            float: left;
+            line-height: 1.50;
+            font-size: 15px;
+            div{
+                display:flex;
+                padding: 16px 0 16px 10px;
+                width: 100%;
+                gap:0.6rem;
+            }
+            &.active, &:hover {
+                font-weight: bold;
+                background-color: white;
+              }
+        }
+    }
+    .ProjectsDropdown{
+        padding: 16px 0 24px 10px;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        line-height: 1.50;
+        font-size: 15px;
+        font-weight: bold;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        gap:0.6rem;
+        border-bottom: 1px solid #f1f1f1;
+
+        span{
+            display:flex;
+            align-items: center;
+        }
+        &.active, &:hover {
+            font-weight: bold;
+            background-color: white;
+          }
+    }
+    // .VisibileProjects{
+    //     display:flex;
+    //     align-items: stretch;
+    //     margin-top: 20px;
+    //     margin-bottom: 20px;
+    //     display: -webkit-box;
+    //     display: -ms-flexbox;
+    //     display: flex;
+    //     padding-left: 10px;
+    // }
+}
