@@ -1,14 +1,13 @@
 const { Schema, model } = require('mongoose');
 
-const schema = new mongoose.Schema({
-    task:{
+const schema = new Schema({
+    task_name:{
       type: String,
       required: true,
+    }
     },
-    timestamps:{
-        createdAt: true,
-    },
+    {
+      timestamps: { createdAt: true, updatedAt: false }
     });
-const model = mongoose.model('Task', schema);
 
-module.exports = model;
+module.exports = model('Task', schema);

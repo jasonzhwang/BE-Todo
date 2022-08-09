@@ -5,12 +5,12 @@ const schema = new Schema({
       type: String,
       required: true,
     },
-    // tasks:[
-    //     {
-    //       type: Schema.Types.ObjectId,
-    //       ref: 'Task',
-    //     },
-    //   ],
+    tasks:[
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Task',
+        },
+      ],
     },
     {
       timestamps: { createdAt: true, updatedAt: false }
