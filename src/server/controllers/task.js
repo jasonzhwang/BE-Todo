@@ -16,7 +16,22 @@ async function addTask(req, res) {
   return res.status(201).json(task);
 }
 
+async function deleteTaskById(req, res) {
+  // console.log(req);
+  const { id } = req.query;
+  console.log(id);
+  const task = await Task.findByIdAndRemove(id).exec();
+  if (!task) {
+    return res.status(404).json({
+      error: 'task not found',
+    });
+  }
+  // delete student reference
+  res.sendStatus(204);
+}
+
 module.exports = {
   getAllTasks,
   addTask,
+  deleteTaskById
 };
