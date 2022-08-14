@@ -4,7 +4,6 @@ import AddProject from '../AddProject/AddProject'
 import SelectedTaskContext from '../../context/SelectedTaskContext'
 import '../Projects/Projects.scss'
 import axios from 'axios';
-// axios.defaults.baseURL = 'http://127.0.0.1:8080';
 axios.defaults.baseURL = 'http://127.0.0.1:3001';
 
 const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUSIC'];
@@ -72,7 +71,7 @@ const Projects = () => {
 // const Projects = ({selectedTask,getSelected,setSelectedTask}) => {
 let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
 const [data,setData] = useState();
-
+console.log(data);
 // const loadDataOnlyOnce = () => {
 //   console.log("Hello kapil")
 // }
@@ -87,7 +86,7 @@ useEffect(()=>{
   const fetchData = async()=>{
     await axios.get('/api/projects')
     .then((response)=>{
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data)
     }).catch((err)=>{
       console.log(err);
