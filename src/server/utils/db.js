@@ -1,5 +1,5 @@
 // require('dotenv').config();
-PORT=8000
+PORT=3000
 CONNECTION_STRING = "mongodb://127.0.0.1:27017"
 const mongoose = require('mongoose');
 

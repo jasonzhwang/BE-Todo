@@ -6,7 +6,9 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
     "concurrently": "^7.3.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "moment": "^2.29.3",
@@ -26,8 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start2": "react-scripts start",
-    "start": "nodemon src/server/index.js ",
+    "start": "concurrently \"react-scripts start\" \"nodemon src/server/index.js\"",
+    "start3": "react-scripts start",
+    "start1": "nodemon src/server/index.js ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -1,8 +1,11 @@
-import React, { useState,useContext } from 'react';
+import React, { useState,useContext,useEffect } from 'react';
 // import styled from 'styled-components'
 import AddProject from '../AddProject/AddProject'
 import SelectedTaskContext from '../../context/SelectedTaskContext'
 import '../Projects/Projects.scss'
+import axios from 'axios';
+// axios.defaults.baseURL = 'http://127.0.0.1:8080';
+axios.defaults.baseURL = 'http://127.0.0.1:3001';
 
 const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUSIC'];
 
@@ -68,13 +71,42 @@ const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUS
 const Projects = () => {
 // const Projects = ({selectedTask,getSelected,setSelectedTask}) => {
 let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
+const [data,setData] = useState();
+
+// const loadDataOnlyOnce = () => {
+//   console.log("Hello kapil")
+// }
+  
+// // This function will called only once
+// useEffect(() => {
+//   loadDataOnlyOnce();
+// }, [])
+
+useEffect(()=>{
+  console.log('test useeffect')
+  const fetchData = async()=>{
+    await axios.get('/api/projects')
+    .then((response)=>{
+      console.log(response.data);
+      setData(response.data)
+    }).catch((err)=>{
+      console.log(err);
+    })
+      // .then(res=>{
+      //   console.log(res);
+      //   setData(res.data);
+      // })
+      // setData(response.data)
+  }
+  fetchData();
+},[])
 
   return (
     <>
     <ul className="projects">
         {
         projects.map((project,index) => 
-        <li className="Project" key={index} onClick={()=>{selectedTask=project;setSelectedTask(project);console.log(selectedTask)}}>
+        <li className="Project" key={index} onClick={()=>{selectedTask=project;setSelectedTask(project);}}>
         {/* <Styledli key={index} onClick={()=>{selectedTask=project; getSelected(project);setSelectedTask(selectedTask);console.log(selectedTask)}}> */}
 
             {/* <IndividualProject name={project}/> */}
