@@ -76,7 +76,7 @@ const Projects = () => {
 // const Projects = ({selectedTask,getSelected,setSelectedTask}) => {
 let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
 const [data,setData] = useState();
-const [updatedata,setUpdatedata] =useState(false);
+// const [updatedata,setUpdatedata] =useState(false);
 const [deldata,setDeldata] =useState(false);
 
 const [modal, setModal] = useState(false);
@@ -122,8 +122,8 @@ useEffect(()=>{
             <span className="dot">•</span>
             <h2 className="projectName">{project}</h2>
             <div display="flex" >
-              <span className="clickme" onClick={() => Toggle()}><FiEdit /></span>
-              <Modal show={modal} />
+              <span className="edit" onClick={() => Toggle()}><FiEdit /></span>
+              <Modal show={modal} close={()=>Toggle()} title={selectedTask}/>
               {/* <ModalDialog updatedata={updatedata} setUpdatedata={setUpdatedata}/> */}
               <span className="delete" onClick={()=>{setDeldata(data[index]["_id"])}}><TiDeleteOutline /></span>              
               {/* <span className="delete" onClick={()=>{console.log(data[index]["_id"])}}><TiDeleteOutline /></span> */}
