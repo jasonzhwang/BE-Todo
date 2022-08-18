@@ -31,7 +31,7 @@ const Header = () => {
 //   const [showQuickAddTask, setShowQuickAddTask] = useState(false);
 
   return (
-    <header>
+    <header className="header">
       <nav>
         <img src="/images/logo.png" className="logo" />
       <ul className="RightNav">

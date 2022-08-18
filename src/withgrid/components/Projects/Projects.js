@@ -3,10 +3,15 @@ import React, { useState,useContext,useEffect } from 'react';
 import AddProject from '../AddProject/AddProject'
 import SelectedTaskContext from '../../context/SelectedTaskContext'
 import '../Projects/Projects.scss'
+// import ModalDialog from '../ModalDialog'
+import Modal from '../Modal'
+import {FiEdit} from 'react-icons/fi';
+import {TiDeleteOutline} from 'react-icons/ti';
 import axios from 'axios';
 axios.defaults.baseURL = 'http://127.0.0.1:3001';
 
-const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUSIC'];
+// const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUSIC'];
+const projects = [];
 
 // const Styleddot = styled.span`
 //     margin-right: 10px;
@@ -71,34 +76,38 @@ const Projects = () => {
 // const Projects = ({selectedTask,getSelected,setSelectedTask}) => {
 let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
 const [data,setData] = useState();
-console.log(data);
-// const loadDataOnlyOnce = () => {
-//   console.log("Hello kapil")
-// }
-  
-// // This function will called only once
-// useEffect(() => {
-//   loadDataOnlyOnce();
-// }, [])
+const [updatedata,setUpdatedata] =useState(false);
+const [deldata,setDeldata] =useState(false);
+
+const [modal, setModal] = useState(false);
+const Toggle = () => setModal(!modal);
 
 useEffect(()=>{
-  console.log('test useeffect')
   const fetchData = async()=>{
     await axios.get('/api/projects')
     .then((response)=>{
       // console.log(response.data);
       setData(response.data)
+      for(let i=0;i<response.data.length;i++){
+        // console.log(response.data[i]["project_name"]);
+        projects.push(response.data[i]["project_name"]);
+        }
     }).catch((err)=>{
       console.log(err);
     })
-      // .then(res=>{
-      //   console.log(res);
-      //   setData(res.data);
-      // })
-      // setData(response.data)
   }
   fetchData();
 },[])
+
+
+useEffect(()=>{
+  const delData = async()=>{
+    await axios.delete(`/api/projects/?id=${deldata}`)
+  }
+  if(deldata){
+    delData();
+  }
+},[deldata])
 
   return (
     <>
@@ -112,6 +121,13 @@ useEffect(()=>{
             <div>
             <span className="dot">•</span>
             <h2 className="projectName">{project}</h2>
+            <div display="flex" >
+              <span className="clickme" onClick={() => Toggle()}><FiEdit /></span>
+              <Modal show={modal} />
+              {/* <ModalDialog updatedata={updatedata} setUpdatedata={setUpdatedata}/> */}
+              <span className="delete" onClick={()=>{setDeldata(data[index]["_id"])}}><TiDeleteOutline /></span>              
+              {/* <span className="delete" onClick={()=>{console.log(data[index]["_id"])}}><TiDeleteOutline /></span> */}
+            </div>
             </div>
             {/* <span
                 tabIndex={0}

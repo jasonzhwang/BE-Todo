@@ -26,6 +26,14 @@
                 margin: 0;
                 color: #333;
                 font-size: 15px;
+                width:15rem;
+            } 
+            div{
+                display:flex;
+                justify-content:flex-end;
+                span{
+                    margin-right: 1rem;
+                }
             }
             &.active, &:hover {
                 font-weight: bold;
