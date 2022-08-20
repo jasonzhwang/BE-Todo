@@ -38,7 +38,6 @@ const Tasks = () => {
 
     let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
     const test = makeList({selectedTask})
-    console.log(test)
     return(
         <div className="tasks-content">
             <h1 className="task-selected">

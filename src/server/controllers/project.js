@@ -43,9 +43,23 @@ async function deleteProjectById(req, res) {
   res.sendStatus(204);
 }
 
+async function updateProjectById(req, res) {
+  const { id } = req.query;
+  const { project_name } = req.body;
+  console.log(id, project_name);
+  const project = await Project.findByIdAndUpdate(id,{ project_name },{ new: true }).exec();
+  if (!project) {
+    return res.status(404).json({
+      error: 'project not found',
+    });
+  }
+  res.sendStatus(204);
+}
+
 module.exports = {
   getAllProjects,
   addProject,
+  updateProjectById,
   // addTaskToProject
   deleteProjectById
 };
