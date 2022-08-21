@@ -1,7 +1,7 @@
 import React, { useContext,useEffect,useState} from 'react';
 import ReactDOM from "react-dom";
 import "./Modal.scss";
-import SelectedTaskContext from '../../context/SelectedTaskContext'
+import SelectedProjectContext from '../../context/SelectedProjectContext'
 import Close from "../../../imgs/times-solid.svg";
 import axios from 'axios';
 axios.defaults.baseURL = 'http://127.0.0.1:3001';
@@ -9,7 +9,7 @@ axios.defaults.baseURL = 'http://127.0.0.1:3001';
 const modalContainer = document.querySelector("#modal");
 
 const Modal = ({ show, close ,title, currentProjectId}) => {
-  let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
+  let {selectedProject,setSelectedProject} = useContext(SelectedProjectContext);
   // const [updatedata,setUpdatedata] =useState(false);
   const [addproject,setAddproject] =useState(false);
   const [updatedata,setUpdatedata] =useState(false); 
@@ -25,8 +25,8 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
 
   useEffect(()=>{
     const updateData = async()=>{
-      console.log(`${currentProjectId},${selectedTask}`);
-      await axios.put(`/api/projects/?id=${currentProjectId}`,{project_name:selectedTask})
+      console.log(`${currentProjectId},${selectedProject}`);
+      await axios.put(`/api/projects/?id=${currentProjectId}`,{project_name:selectedProject})
       // console.log("test through2");
       // console.log(`${currentProjectId},${updatedata}`)
     }
@@ -39,7 +39,7 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
   useEffect(()=>{
     const addProject = async()=>{
       console.log("passthrough");
-      await axios.post(`/api/projects`,{project_name:selectedTask})
+      await axios.post(`/api/projects`,{project_name:selectedProject})
     }
     if(addproject){
       addProject();
@@ -62,7 +62,7 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
           </header>
           <main className="modal_content">
             <label className="modal_content-label">New project:</label>
-            <input className="modal_content-input" type="text" value={title} onChange= {e=>{setSelectedTask(e.target.value);console.log(selectedTask)}}></input>
+            <input className="modal_content-input" type="text" value={title} onChange= {e=>{setSelectedProject(e.target.value);console.log(selectedProject)}}></input>
           </main>
           <footer className="modal_footer">
             <button className="modal-close" onClick={() => close()}>
@@ -77,7 +77,7 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
                   else{
                     setAddproject(true)
                   }
-                  setSelectedTask(selectedTask);
+                  setSelectedProject(selectedProject);
                   close();
                   window.location.reload();
                   }

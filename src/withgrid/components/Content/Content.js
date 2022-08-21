@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import Tasks from '../Task';
 import styled from 'styled-components'
-import {SelectedTaskProvider} from '../../context/SelectedTaskContext';
+import {SelectedProjectProvider} from '../../context/SelectedProjectContext';
 import '../Content/Content.scss'
 
 // const ContentWrapper =  styled.section`
@@ -16,7 +16,7 @@ import '../Content/Content.scss'
 // `
 
 const Content = () =>  {
-    const [selectedTask,setSelectedTask] = useState("👏THE OFFICE");
+    const [selectedProject,setSelectedProject] = useState("👏THE OFFICE");
     // const getSelected = (e) =>{
     //   setSelectedTask(e);
     // }
@@ -26,10 +26,10 @@ const Content = () =>  {
       {/* <Sidebar /> */}
       {/* <Sidebar selectedTask={selectedTask} setSelectedTask={setSelectedTask} getSelected={getSelected}/>
       <Tasks selectedTask={selectedTask} setSelectedTask={setSelectedTask}/> */}
-      <SelectedTaskProvider value={{selectedTask, setSelectedTask}}>
+      <SelectedProjectProvider value={{selectedProject, setSelectedProject}}>
         <Sidebar />
         <Tasks />
-      </SelectedTaskProvider>
+      </SelectedProjectProvider>
     </section>
     )
 }

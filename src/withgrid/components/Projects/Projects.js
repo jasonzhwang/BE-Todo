@@ -1,7 +1,7 @@
 import React, { useState,useContext,useEffect } from 'react';
 // import styled from 'styled-components'
 import AddProject from '../AddProject/AddProject'
-import SelectedTaskContext from '../../context/SelectedTaskContext'
+import SelectedProjectContext from '../../context/SelectedProjectContext'
 import '../Projects/Projects.scss'
 // import ModalDialog from '../ModalDialog'
 import Modal from '../Modal'
@@ -15,7 +15,7 @@ const projects = [];
 
 const Projects = () => {
 // const Projects = ({selectedTask,getSelected,setSelectedTask}) => {
-let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
+let {selectedProject,setSelectedProject} = useContext(SelectedProjectContext);
 const [currentProjectId,setCurrentProjectId] = useState();
 const [data,setData] = useState();
 const [deldata,setDeldata] =useState(false);
@@ -55,7 +55,7 @@ useEffect(()=>{
     <ul className="projects">
         {
         projects.map((project,index) => 
-        <li className="Project" key={index} onClick={()=>{selectedTask=project;setSelectedTask(project);}}>
+        <li className="Project" key={index} onClick={()=>{selectedProject=project;setSelectedProject(project);}}>
         {/* <Styledli key={index} onClick={()=>{selectedTask=project; getSelected(project);setSelectedTask(selectedTask);console.log(selectedTask)}}> */}
 
             {/* <IndividualProject name={project}/> */}
@@ -64,18 +64,12 @@ useEffect(()=>{
             <h2 className="projectName">{project}</h2>
             <div display="flex" >
               <span className="edit" onClick={() => {Toggle(); setCurrentProjectId(data[index]["_id"]);}}><FiEdit /></span>
-              <Modal show={modal} close={()=>Toggle()} title={selectedTask} currentProjectId = {currentProjectId}/>
+              <Modal show={modal} close={()=>Toggle()} title={selectedProject} currentProjectId = {currentProjectId}/>
               {/* <ModalDialog updatedata={updatedata} setUpdatedata={setUpdatedata}/> */}
               <span className="delete" onClick={()=>{setDeldata(data[index]["_id"]);window.location.reload();}}><TiDeleteOutline /></span>              
               {/* <span className="delete" onClick={()=>{console.log(data[index]["_id"])}}><TiDeleteOutline /></span> */}
             </div>
             </div>
-            {/* <span
-                tabIndex={0}
-                role="button"
-            >
-                <FaTrashAlt />
-            </span> */}
         </li>
         )
         }

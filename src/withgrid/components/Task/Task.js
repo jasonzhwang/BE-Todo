@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import Checkbox from '../Checkbox/index'
 import AddTask from '../AddTask/index'
 import './Task.scss'
-import SelectedTaskContext from '../../context/SelectedTaskContext'
+import SelectedProjectContext from '../../context/SelectedProjectContext'
 
 const task_dt=[
 'This application a Todoist clone was built using create-react-app as a base',
@@ -36,13 +36,13 @@ const Tasks = () => {
 // const Tasks = ({selectedTask}) => {
     // console.log("selectedTask in details",selectedTask);
 
-    let {selectedTask,setSelectedTask} = useContext(SelectedTaskContext);
-    const test = makeList({selectedTask})
+    let {selectedProject,setSelectedProject} = useContext(SelectedProjectContext);
+    const test = makeList({selectedProject})
     return(
         <div className="tasks-content">
             <h1 className="task-selected">
                 {/* <span>Test</span> */}
-                {selectedTask}
+                {selectedProject}
             </h1>
             <ul>
                 {
