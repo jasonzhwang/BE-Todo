@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import Tasks from '../Task';
 import styled from 'styled-components'
-import {SelectedTaskProvider} from '../../context/SelectedTaskContext';
+import {SelectedTaskProvider} from '../../context/SelectedProjectContext';
 import '../Content/Content.scss'
 
 // const ContentWrapper =  styled.section`

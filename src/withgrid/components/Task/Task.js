@@ -1,8 +1,11 @@
 // import styled from 'styled-components'
-import { useContext } from 'react'
+import { useContext,useState } from 'react'
 import Checkbox from '../Checkbox/index'
 import AddTask from '../AddTask/index'
 import './Task.scss'
+import Modal from '../Modal'
+import {FiEdit} from 'react-icons/fi';
+import {TiDeleteOutline} from 'react-icons/ti';
 import SelectedProjectContext from '../../context/SelectedProjectContext'
 
 const task_dt=[
@@ -35,7 +38,8 @@ const makeList = (name)=>{
 const Tasks = () => {
 // const Tasks = ({selectedTask}) => {
     // console.log("selectedTask in details",selectedTask);
-
+    const [modal, setModal] = useState(false);
+    const Toggle = () => setModal(!modal);
     let {selectedProject,setSelectedProject} = useContext(SelectedProjectContext);
     const test = makeList({selectedProject})
     return(
@@ -48,8 +52,15 @@ const Tasks = () => {
                 {
                 task_dt.map((task,index) =>
                      <li key={index}>
-                         <Checkbox />
-                         <span>{task}</span>
+                         <div>
+                            <Checkbox />
+                            <span className="tasktext">{task}</span>
+                            <div>
+                                <span className="edit"><FiEdit /></span>
+                                <Modal show={modal} close={()=>Toggle()}/>
+                                <span className="delete"><TiDeleteOutline /></span>    
+                            </div>
+                         </div>
                      </li>
                     )
                 }

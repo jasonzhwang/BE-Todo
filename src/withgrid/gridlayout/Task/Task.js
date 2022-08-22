@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import Checkbox from '../Checkbox/index'
 import AddTask from '../AddTask/index'
 import './Task.scss'
-import SelectedTaskContext from '../../context/SelectedTaskContext'
+import SelectedTaskContext from '../../context/SelectedProjectContext'
 
 const task_dt=[
 'This application a Todoist clone was built using create-react-app as a base',
