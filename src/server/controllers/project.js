@@ -56,6 +56,21 @@ async function updateProjectById(req, res) {
   res.sendStatus(204);
 }
 
+async function addTaskToProject(req, res) {
+  const { id, code } = req.params;
+  const task = await Task.findById(code);
+  const project = await Project.findById(id);
+  if (!project || !task) {
+    return res.sendStatus(404);
+  }
+  // transaction
+  project.courses.addToSet(course._id);
+  task.projects.addToSet(task._id);
+  await project.save();
+  await task.save();
+  return res.json(project);
+}
+
 module.exports = {
   getAllProjects,
   addProject,

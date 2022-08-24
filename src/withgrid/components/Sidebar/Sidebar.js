@@ -42,7 +42,7 @@ const Sidebar = () => {
             <span>
               <FaRegCalendarAlt />
             </span>
-            <span>Next 7 days</span>
+            <span>Yesterday</span>
           </div>
         </li>
       </ul>
@@ -55,9 +55,10 @@ const Sidebar = () => {
           <FaChevronDown
           />
         </span>
-        <h2>Projects</h2>
+        <h2>Departments</h2>
     </div>
-    <>{showProjects && <Projects />}</>
+    {/* <>{showProjects && <Projects />}</> */}
+    <>{showProjects&&<Projects />}</>
     {/* <VisibleProjects>{showProjects && <Projects selectedTask={selectedTask} getSelected={getSelected} setSelectedTask={setSelectedTask}/>}</VisibleProjects> */}
     </div>
   );

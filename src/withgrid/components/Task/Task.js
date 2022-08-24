@@ -1,9 +1,9 @@
 // import styled from 'styled-components'
 import { useContext,useState } from 'react'
-import Checkbox from '../Checkbox/index'
+// import Checkbox from '../Checkbox/index'
 import AddTask from '../AddTask/index'
 import './Task.scss'
-import Modal from '../Modal'
+import TaskModal from '../TaskModal'
 import {FiEdit} from 'react-icons/fi';
 import {TiDeleteOutline} from 'react-icons/ti';
 import SelectedProjectContext from '../../context/SelectedProjectContext'
@@ -53,11 +53,12 @@ const Tasks = () => {
                 task_dt.map((task,index) =>
                      <li key={index}>
                          <div>
-                            <Checkbox />
+                            {/* <Checkbox /> */}
+                            <div className="number_sign">{index+1}</div>
                             <span className="tasktext">{task}</span>
                             <div>
-                                <span className="edit"><FiEdit /></span>
-                                <Modal show={modal} close={()=>Toggle()}/>
+                                <span className="edit" onClick={() => {Toggle();}}><FiEdit /></span>
+                                <TaskModal show={modal} close={()=>Toggle()}/>
                                 <span className="delete"><TiDeleteOutline /></span>    
                             </div>
                          </div>

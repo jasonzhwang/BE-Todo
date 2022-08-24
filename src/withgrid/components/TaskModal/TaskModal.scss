@@ -1,4 +1,4 @@
-.modalContainer {
+.TaskmodalContainer {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -10,8 +10,8 @@
     justify-content: center;
     align-items: center;
   
-    .modal {
-      width: 30vw;
+    .Taskmodal {
+      width: 80vw;
       height: auto;
       background-color: #fff;
       padding: 2rem;
@@ -60,7 +60,7 @@
           margin: 10px;
           background: white;
           border: none;
-          width:40%;
+          width:85%;
           border-radius: 7px;
         }
       }
@@ -75,7 +75,7 @@
   
           border-radius: 8px;
         }
-        .modal-close {
+        .Taskmodal-close {
           background-color: transparent;
           font-weight: 600;
   

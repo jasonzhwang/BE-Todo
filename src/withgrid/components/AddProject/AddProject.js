@@ -12,7 +12,7 @@ const AddProject = () => {
             onClick={()=>setModal(true)}
         >
             <span className="add-project__plus">+</span>
-            <span className="add-project__text">Add Project</span>
+            <span className="add-project__text">Add Department</span>
             <Modal show={modal} close={()=>Toggle()}/>
         </div>
     )
