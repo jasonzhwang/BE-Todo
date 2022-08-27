@@ -1,0 +1,78 @@
+.sidebar-container {
+  width: 350px;
+  height: calc(100vh);
+  padding-top: 74px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-right: 1px solid #f1f1f1;
+  background-color: #fafafa;
+}
+
+.sidebar-container .sidebar-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sidebar-container .sidebar-list li {
+  list-style-type: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+  line-height: 1.50;
+  font-size: 15px;
+}
+
+.sidebar-container .sidebar-list li div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 0 16px 10px;
+  width: 100%;
+  gap: 0.6rem;
+}
+
+.sidebar-container .sidebar-list li.active, .sidebar-container .sidebar-list li:hover {
+  font-weight: bold;
+  background-color: white;
+}
+
+.sidebar-container .ProjectsDropdown {
+  padding: 16px 0 24px 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  line-height: 1.50;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sidebar-container .ProjectsDropdown span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sidebar-container .ProjectsDropdown h2 {
+  font-size: 1.2rem;
+}
+
+.sidebar-container .ProjectsDropdown.active, .sidebar-container .ProjectsDropdown:hover {
+  font-weight: bold;
+  background-color: white;
+}
+/*# sourceMappingURL=Sidebar.css.map */

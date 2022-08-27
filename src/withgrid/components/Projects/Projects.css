@@ -1,0 +1,81 @@
+.projects {
+  padding-top: 1rem;
+}
+
+.projects .Project {
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1.50;
+  font-size: 15px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.projects .Project div {
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.projects .Project div .dot {
+  font-size: 30px;
+}
+
+.projects .Project div .projectName {
+  margin: 0;
+  color: #333;
+  font-size: 1rem;
+  width: 20rem;
+}
+
+.projects .Project div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.projects .Project div div span {
+  margin-right: 1rem;
+}
+
+.projects .Project div.active, .projects .Project div:hover {
+  font-weight: bold;
+  background-color: white;
+}
+
+.projects :nth-child(1) .dot {
+  color: #6accbc;
+}
+
+.projects :nth-child(2) .dot {
+  color: #fad003;
+}
+
+.projects :nth-child(3) .dot {
+  color: #ff8d85;
+}
+
+.projects :nth-child(4) .dot {
+  color: #ff9932;
+}
+
+.projects :nth-child(5) .dot {
+  color: #af38eb;
+}
+/*# sourceMappingURL=Projects.css.map */

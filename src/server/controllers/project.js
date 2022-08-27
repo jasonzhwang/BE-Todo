@@ -56,25 +56,29 @@ async function updateProjectById(req, res) {
   res.sendStatus(204);
 }
 
-async function addTaskToProject(req, res) {
-  const { id, code } = req.params;
-  const task = await Task.findById(code);
-  const project = await Project.findById(id);
-  if (!project || !task) {
-    return res.sendStatus(404);
-  }
-  // transaction
-  project.courses.addToSet(course._id);
-  task.projects.addToSet(task._id);
-  await project.save();
-  await task.save();
-  return res.json(project);
-}
+// async function addTaskToProject(req, res) {
+//   const { task_name } = req.body;
+//   console.log(task_name);
+//   const task = new Project({
+//       task_name
+//   });
+//   const { id, code } = req.params;
+//   // const addedtask = await Task.findById(code);
+//   const project = await Project.findById(id);
+//   if (!project || !addedtask) {
+//     return res.sendStatus(404);
+//   }
+//   // transaction
+//   project.tasks.addToSet(task.code);
+//   await project.save();
+//   await task.save();
+//   return res.json(project);
+// }
 
 module.exports = {
   getAllProjects,
   addProject,
   updateProjectById,
-  // addTaskToProject
+  // addTaskToProject,
   deleteProjectById
 };

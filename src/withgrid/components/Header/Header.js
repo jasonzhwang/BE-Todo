@@ -35,12 +35,12 @@ const Header = () => {
       <nav>
         <img src="/images/logo.png" className="logo" />
       <ul className="RightNav">
-        <li>
+        {/* <li>
           <button className="btn-plus">+</button>
         </li>
         <li>
           <button className="btn-pizza"><FaPizzaSlice /></button>
-        </li>
+        </li> */}
       </ul>
       </nav>
     </header>

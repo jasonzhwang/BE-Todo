@@ -1,0 +1,53 @@
+.container-page {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'header header header' 'aside-left main aside-right' 'footer footer footer';
+  min-height: 100vh;
+  -ms-grid-columns: 50px 1fr 200px;
+      grid-template-columns: 50px 1fr 200px;
+  -ms-grid-rows: 50px 1fr 50px;
+      grid-template-rows: 50px 1fr 50px;
+}
+
+.container-page .aside-left {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: aside-left;
+  background-color: #fafafa;
+}
+
+.container-page .aside-right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: aside-right;
+  background-color: #fafafa;
+}
+
+.container-page .main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+  background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .container-page {
+        grid-template-areas: 'header'  'aside-left' 'main' 'aside-right' 'footer';
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 50px 50px minmax(300px, auto) 50px 80px;
+        grid-template-rows: 50px 50px minmax(300px, auto) 50px 80px;
+  }
+  .aside-left, .aside-right, .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=AppGrid.css.map */

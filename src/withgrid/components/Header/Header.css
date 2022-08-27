@@ -1,0 +1,66 @@
+.header {
+  grid-area: header;
+  border-bottom: solid 1px #e5672e;
+  background-color: #e5672e;
+  height: 60px;
+  z-index: 400;
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.header nav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  max-width: 922px;
+  margin: auto;
+  height: 44px;
+}
+
+.header nav .logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: 1 / 1;
+  width: 48px;
+}
+
+.header nav .RightNav {
+  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 2rem;
+}
+
+.header nav .RightNav button {
+  background: transparent;
+  border: transparent;
+  color: white;
+}
+
+.header nav li {
+  list-style-type: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+}
+
+.header nav li .btn-plus {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=Header.css.map */

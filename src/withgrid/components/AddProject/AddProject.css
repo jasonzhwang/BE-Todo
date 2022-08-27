@@ -1,0 +1,21 @@
+.add-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.6rem;
+  padding-left: 0.7rem;
+  padding-top: 0.5rem;
+  cursor: pointer;
+}
+
+.add-project span:nth-child(1) {
+  color: #dd4b39;
+  font-size: 18px;
+}
+
+.add-project span:nth-child(2) {
+  display: inline-block;
+  color: #545454;
+  font-size: 14px;
+}
+/*# sourceMappingURL=AddProject.css.map */

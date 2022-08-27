@@ -61,7 +61,7 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
             </button>
           </header>
           <main className="modal_content">
-            <label className="modal_content-label">New project:</label>
+            <label className="modal_content-label">New Department:</label>
             <input className="modal_content-input" type="text" value={title} onChange= {e=>{setSelectedProject(e.target.value);console.log(selectedProject)}}></input>
           </main>
           <footer className="modal_footer">

@@ -10,7 +10,6 @@ import {TiDeleteOutline} from 'react-icons/ti';
 import axios from 'axios';
 axios.defaults.baseURL = 'http://127.0.0.1:3001';
 
-// const projects = ['👏THE OFFICE','🚀DAILY','🎯FUTURE','📚WORDS','🎵MUSIC'];
 const projects = [];
 
 const Projects = () => {

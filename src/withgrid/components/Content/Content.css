@@ -1,0 +1,7 @@
+.main {
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=Content.css.map */

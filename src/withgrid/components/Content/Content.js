@@ -16,7 +16,7 @@ import '../Content/Content.scss'
 // `
 
 const Content = () =>  {
-    const [selectedProject,setSelectedProject] = useState("👏THE OFFICE");
+    const [selectedProject,setSelectedProject] = useState("");
     // const getSelected = (e) =>{
     //   setSelectedTask(e);
     // }

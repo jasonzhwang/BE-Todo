@@ -3,7 +3,7 @@ const {
   getAllProjects,
   addProject,
   updateProjectById,
-  // addTaskToProject
+  // addTaskToProject,
   deleteProjectById
 } = require('../controllers/project');
 
