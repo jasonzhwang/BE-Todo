@@ -35,58 +35,32 @@ const Tasks = () => {
     const Toggle = () => setModal(!modal);
     let {selectedProject} = useContext(SelectedProjectContext);
     let {loadData,setLoadData} = useContext(LoadDataContext);
-    const [tasks,setTasks] = useState(null);
+    const [tasks,setTasks] = useState();
     // console.log(selectedProject);
     // const test = makeList({selectedProject})
 
-    // let tasks;
-    // console.log(loadData);
-    // console.log(loadData[0]["project_name"]);
-    // console.log(selectedProject);
-    // useEffect(()=>{
-    //     const fetchData = async()=>{ 
-    //         for(let i=0;i< loadData[i].length;i++){
-    //             if(loadData[i]["project_name"] === selectedProject){
-    //                 setTasks(loadData[i]['tasks']);
-    //             }
-    //         }
-    //     }
-    //     fetchData().catch((err)=>{
-    //         console.log(err);
-    //       });
-    //     // console.log(tasks);
-    //   },[])
-
-    // useEffect(()=>{
-    // async function run(){
-    //     try{
-    //         for(let i=0;i< loadData.length;i++){
-    //         if(loadData[i]["project_name"] === selectedProject){
-    //             setTasks(loadData[i]['tasks']);
-    //         }
-    //     }
-    //        }catch(error){
-    //         console.log(error);
-    //        }
-    //     }
-    // run();
-    // },[selectedProject])
-
-
+    const taskdata = loadData;
+    console.log(taskdata)
     useEffect(()=>{
-    function run(){
-        try{
-            for(let i=0;i< loadData.length;i++){
-            if(loadData[i]["project_name"] === selectedProject){
-                setTasks(loadData[i]['tasks']);
+        const getData = ()=>{
+            console.log(loadData);
+            for(let i=0;i< 3;i++){
+                // console.log(loadData);
+                if(loadData[i]["project_name"] === selectedProject){
+                    return loadData[i]['tasks'];
+                }
             }
         }
-           }catch(error){
-            console.log(error);
-           }
+        const fetchMyAPI = async()=>{
+            const data = await getData();
+            console.log(data)
+            setTasks(data);
         }
-    run();
-    },[selectedProject])
+        fetchMyAPI();
+        console.log(tasks);
+    },[])
+
+    function useEffect(loadDa)
       
     return(
         <div className="tasks-content">
@@ -96,7 +70,7 @@ const Tasks = () => {
             </h1>
             <ul>
                 {
-                tasks.map((task,index) =>
+                task_dt.map((task,index) =>
                      <li key={index}>
                          <div>
                             {/* <Checkbox /> */}
