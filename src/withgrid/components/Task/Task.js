@@ -43,7 +43,7 @@ const Tasks = () => {
     console.log(taskdata)
     useEffect(()=>{
         const getData = ()=>{
-            console.log(loadData);
+            console.log(taskdata);
             for(let i=0;i< 3;i++){
                 // console.log(loadData);
                 if(loadData[i]["project_name"] === selectedProject){
@@ -60,7 +60,6 @@ const Tasks = () => {
         console.log(tasks);
     },[])
 
-    function useEffect(loadDa)
       
     return(
         <div className="tasks-content">
@@ -70,7 +69,7 @@ const Tasks = () => {
             </h1>
             <ul>
                 {
-                task_dt.map((task,index) =>
+                tasks.map((task,index) =>
                      <li key={index}>
                          <div>
                             {/* <Checkbox /> */}
