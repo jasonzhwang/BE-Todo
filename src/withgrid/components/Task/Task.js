@@ -17,7 +17,7 @@ let task_dt=[
 // 'task5',
 // 'task6'
 ]
-console.log(task_dt);
+
 // const selectedTask = "Test2"
 
 // const H1 = styled.h1`
@@ -36,7 +36,7 @@ const Tasks = () => {
     const Toggle = () => setModal(!modal);
     let {selectedProject} = useContext(SelectedProjectContext);
     let {loadData,setLoadData} = useContext(LoadDataContext);
-    const [tasks,setTasks] = useState([]);
+    const [tasks,setTasks] = useState([]);      //这里的state的初始值应该放[],否则要map list会出现type error
     // console.log(selectedProject);
     // const test = makeList({selectedProject})
 
@@ -57,7 +57,7 @@ const Tasks = () => {
             setTasks(data);
         }
         fetchMyAPI();
-    },[loadData])
+    },[loadData])              //useContext传进来的loadData是一个state,state每次改变都要re-render。这个task页面更新是靠context传进来的值更新的，而不是自动加载。
       
     return(
         <div className="tasks-content">
