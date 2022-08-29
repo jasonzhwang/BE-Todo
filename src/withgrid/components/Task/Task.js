@@ -9,7 +9,7 @@ import {TiDeleteOutline} from 'react-icons/ti';
 import SelectedProjectContext from '../../context/SelectedProjectContext';
 import LoadDataContext from '../../context/LoadDataContext'
 
-const task_dt=[
+let task_dt=[
 // 'task1',
 // 'task2',
 // 'task3',
@@ -17,6 +17,7 @@ const task_dt=[
 // 'task5',
 // 'task6'
 ]
+console.log(task_dt);
 // const selectedTask = "Test2"
 
 // const H1 = styled.h1`
@@ -35,18 +36,17 @@ const Tasks = () => {
     const Toggle = () => setModal(!modal);
     let {selectedProject} = useContext(SelectedProjectContext);
     let {loadData,setLoadData} = useContext(LoadDataContext);
-    const [tasks,setTasks] = useState();
+    const [tasks,setTasks] = useState([]);
     // console.log(selectedProject);
     // const test = makeList({selectedProject})
 
-    const taskdata = loadData;
-    console.log(taskdata)
     useEffect(()=>{
         const getData = ()=>{
-            console.log(taskdata);
-            for(let i=0;i< 3;i++){
+            // console.log(taskdata);
+            for(let i=0;i< loadData.length;i++){
                 // console.log(loadData);
                 if(loadData[i]["project_name"] === selectedProject){
+                    // console.log(loadData[i]["tasks"]);
                     return loadData[i]['tasks'];
                 }
             }
@@ -57,9 +57,7 @@ const Tasks = () => {
             setTasks(data);
         }
         fetchMyAPI();
-        console.log(tasks);
-    },[])
-
+    },[loadData])
       
     return(
         <div className="tasks-content">
