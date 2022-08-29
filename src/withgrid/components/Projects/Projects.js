@@ -2,6 +2,7 @@ import React, { useState,useContext,useEffect } from 'react';
 // import styled from 'styled-components'
 import AddProject from '../AddProject/AddProject'
 import SelectedProjectContext from '../../context/SelectedProjectContext'
+import LoadDataContext from '../../context/LoadDataContext'
 import '../Projects/Projects.scss'
 // import ModalDialog from '../ModalDialog'
 import Modal from '../Modal'
@@ -12,9 +13,9 @@ axios.defaults.baseURL = 'http://127.0.0.1:3001';
 
 const projects = [];
 
-const Projects = () => {
-// const Projects = ({selectedTask,getSelected,setSelectedTask}) => {
+const Projects = () => { 
 let {selectedProject,setSelectedProject} = useContext(SelectedProjectContext);
+let {loadData,setLoadData} = useContext(LoadDataContext);
 const [currentProjectId,setCurrentProjectId] = useState();
 const [data,setData] = useState();
 const [deldata,setDeldata] =useState(false);
@@ -28,10 +29,11 @@ useEffect(()=>{
     .then((response)=>{
       // console.log(response.data);
       setData(response.data)
+      setLoadData(response.data)
       for(let i=0;i<response.data.length;i++){
-        // console.log(response.data[i]["project_name"]);
         projects.push(response.data[i]["project_name"]);
         }
+        setSelectedProject(projects[0]);
     }).catch((err)=>{
       console.log(err);
     })

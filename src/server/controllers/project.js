@@ -1,4 +1,6 @@
 const Project = require('../models/project');
+const Task = require('../models/task');
+
 
 async function getAllProjects(req, res) {
   const projects = await Project.find().exec();
@@ -16,18 +18,21 @@ async function addProject(req, res) {
   return res.status(201).json(project);
 }
 
-// async function addTaskToProject(req, res) {
-//   const { id, code } = req.params;
-//   const project = await Course.findById(code);
-//   const task = await Student.findById(id);
-//   if (!project || !task) {
-//     return res.sendStatus(404);
-//   }
-//   // transaction
-//   project.tasks.addToSet(task._id);
-//   await project.save();
-//   return res.json(project);
-// }
+async function addTaskToProject(req, res) {
+  console.log("addtasktoproject in")
+  const { id, code } = req.query;
+  console.log(`${id},${code}`);
+  const project = await Project.findById(id);
+  const task = await Task.findById(code);
+  console.log(`${project},${task}`);
+  if (!project || !task) {
+    return res.sendStatus(404);
+  }
+  // transaction
+  project.tasks.addToSet(task._id);
+  await project.save();
+  return res.status(201).json(project);
+}
 
 async function deleteProjectById(req, res) {
   // console.log(req);
@@ -79,6 +84,6 @@ module.exports = {
   getAllProjects,
   addProject,
   updateProjectById,
-  // addTaskToProject,
-  deleteProjectById
+  addTaskToProject,
+  deleteProjectById,
 };

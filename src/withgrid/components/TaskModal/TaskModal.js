@@ -1,4 +1,4 @@
-import React, { useContext,useEffect,useState} from 'react';
+import React, { useContext,useState} from 'react';
 import ReactDOM from "react-dom";
 import "./TaskModal.scss";
 import SelectedProjectContext from '../../context/SelectedProjectContext'
@@ -10,9 +10,9 @@ const TaskmodalContainer = document.querySelector("#taskmodal");
 
 const TaskModal = ({ show, close ,title, currentProjectId}) => {
   let {selectedProject,setSelectedProject} = useContext(SelectedProjectContext);
-  // const [updatedata,setUpdatedata] =useState(false);
+  const [updatedata,setUpdatedata] =useState(false);
   const [addproject,setAddproject] =useState(false);
-  const [updatedata,setUpdatedata] =useState(false); 
+  // const [updatedata,setUpdatedata] =useState(false); 
 
   // useEffect(()=>{
   //   const updateData = async()=>{

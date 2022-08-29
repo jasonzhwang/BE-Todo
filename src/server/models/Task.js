@@ -1,10 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const schema = new Schema({
-    _id: {
-      type: String,
-      alias: 'code',
-    },
+    // _id: {
+    //   type: String,
+    //   alias: 'code',
+    // },
     task_name:{
       type: String,
       required: true,

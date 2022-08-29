@@ -18,9 +18,10 @@ async function addTask(req, res) {
 
 async function deleteTaskById(req, res) {
   // console.log(req);
-  const { id } = req.query;
-  console.log(id);
-  const task = await Task.findByIdAndRemove(id).exec();
+  const { code } = req.query;
+  console.log(code);
+  const task = await Task.findByIdAndRemove(code).exec();
+  console.log(task);
   if (!task) {
     return res.status(404).json({
       error: 'task not found',

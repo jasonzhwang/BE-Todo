@@ -3,7 +3,7 @@ const {
   getAllProjects,
   addProject,
   updateProjectById,
-  // addTaskToProject,
+  addTaskToProject,
   deleteProjectById
 } = require('../controllers/project');
 
@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('', getAllProjects);
 router.post('', addProject);
 router.put('',updateProjectById);
-// router.post('',addTaskToProject);
+router.post('/addtask',addTaskToProject);
 router.delete('',deleteProjectById);
 
 module.exports = router;
