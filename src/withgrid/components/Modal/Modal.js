@@ -13,6 +13,7 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
   // const [updatedata,setUpdatedata] =useState(false);
   const [addproject,setAddproject] =useState(false);
   const [updatedata,setUpdatedata] =useState(false); 
+  const [submitInput,setSubmitInput] = useState('');
 
   // useEffect(()=>{
   //   const addProject = async()=>{
@@ -62,7 +63,9 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
           </header>
           <main className="modal_content">
             <label className="modal_content-label">New Department:</label>
-            <input className="modal_content-input" type="text" value={title} onChange= {e=>{setSelectedProject(e.target.value);console.log(selectedProject)}}></input>
+            <input className="modal_content-input" type="text" value={title} onChange= {e=>{setSubmitInput(e.target.value);console.log(submitInput)}}></input>
+            {/* <input className="modal_content-input" type="text" value={title}></input> */}
+
           </main>
           <footer className="modal_footer">
             <button className="modal-close" onClick={() => close()}>
@@ -73,11 +76,11 @@ const Modal = ({ show, close ,title, currentProjectId}) => {
                 onClick={
                   ()=>{
                   if(currentProjectId){
-                  setUpdatedata(true);}
+                    setUpdatedata(true);}
                   else{
                     setAddproject(true)
                   }
-                  setSelectedProject(selectedProject);
+                  setSelectedProject(submitInput);
                   close();
                   window.location.reload();
                   }

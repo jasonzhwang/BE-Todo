@@ -57,7 +57,7 @@ const Tasks = () => {
             setTasks(data);
         }
         fetchMyAPI();
-    },[loadData])              //useContext传进来的loadData是一个state,state每次改变都要re-render。这个task页面更新是靠context传进来的值更新的，而不是自动加载。
+    },[loadData,selectedProject])              //useContext传进来的loadData是一个state,state每次改变都要re-render。这个task页面更新是靠context传进来的值更新的，而不是自动加载。
       
     return(
         <div className="tasks-content">

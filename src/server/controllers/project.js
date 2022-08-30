@@ -29,7 +29,7 @@ async function addTaskToProject(req, res) {
     return res.sendStatus(404);
   }
   // transaction
-  project.tasks.addToSet(task._id);
+  project.tasks.addToSet(task);
   await project.save();
   return res.status(201).json(project);
 }
